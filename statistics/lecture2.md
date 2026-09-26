@@ -1,3 +1,5 @@
+Absolutely. Here is **everything we studied so far in one table**, including the **meaning, formula, and calculation example**.
+
 | #  | Concept                        | Meaning                                        | Formula                                                         | Example / Calculation                                                             |                 |
 | -- | ------------------------------ | ---------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------- |
 | 1  | **Random Experiment**          | An experiment whose exact result is uncertain  | —                                                               | Roll die → possible results: \(1,2,3,4,5,6\)                                      |                 |
@@ -18,3 +20,45 @@
 | 16 | **Axiomatic Rule 1**           | Probability cannot be negative                 | \(\boxed{P(A)\ge0}\)                                            | \(P(A)=-0.2\) ❌ impossible                                                        |                 |
 | 17 | **Axiomatic Rule 2**           | Entire sample space is certain                 | \(\boxed{P(S)=1}\)                                              | Die must produce one of \(1\)–\(6\), so \(P(S)=1\)                                |                 |
 | 18 | **Axiomatic Rule 3**           | Add probabilities of mutually exclusive events | \(\boxed{P(A\cup B)=P(A)+P(B)}\)                                | \(0.3+0.4=0.7\)                                                                   |                 |
+
+## 🧠 The most important calculation guide
+
+| If the question says...           | Think...                                   | Formula                          |
+| --------------------------------- | ------------------------------------------ | -------------------------------- |
+| **A AND B**, independent          | Both happen, and neither affects the other | \(\boxed{P(A)P(B)}\)             |
+| **A AND B**, dependent            | Both happen, but first affects second      | \(\boxed{P(A)P(B\mid A)}\)       |
+| **A OR B**, no common outcome     | They are mutually exclusive                | \(\boxed{P(A)+P(B)}\)            |
+| **A OR B**, common outcome exists | There is overlap                           | \(\boxed{P(A)+P(B)-P(A\cap B)}\) |
+| **NOT A**                         | Complement                                 | \(\boxed{1-P(A)}\)               |
+
+### ⭐ One very important distinction
+
+**Mutually exclusive** asks:
+
+> “Can A and B happen together?”
+
+**Independent** asks:
+
+> “Does A affect B?”
+
+So:
+
+$$
+\boxed{\text{Mutually exclusive → NO together}}
+$$
+
+$$
+\boxed{\text{Independent → NO effect}}
+$$
+
+And remember:
+
+$$
+\boxed{\text{AND → usually multiplication}}
+$$
+
+$$
+\boxed{\text{OR → usually addition}}
+$$
+
+This is the core framework you can use to decide **which probability formula to use**.
