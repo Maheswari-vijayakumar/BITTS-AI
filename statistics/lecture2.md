@@ -1,45 +1,64 @@
-#	Concept	Meaning	Formula	Example / Calculation
-1	Random Experiment	An experiment whose exact result is uncertain	—	Roll die → possible results: \(1,2,3,4,5,6\)
-2	Sample Space \(S\)	All possible outcomes	\(S=\{\text{all outcomes}\}\)	2 coin tosses: \(S=\{HH,HT,TH,TT\}\)
-3	Event \(A\)	One or more outcomes we are interested in	\(A\subseteq S\)	Even on die: \(A=\{2,4,6\}\)
-4	Probability	How likely an event is	\(0\le P(A)\le1\)	Even on die: \(P(A)=3/6=1/2\)
-5	Equally likely probability	Favorable outcomes divided by total outcomes	\(\displaystyle P(A)=\frac{\text{favorable}}{\text{total}}\)	Getting 5: \(P(5)=1/6\)
-6	Empirical Probability	Probability based on actual observations	\(\displaystyle P(A)=\frac{\text{occurrences}}{\text{trials}}\)	110 Heads in 200 tosses: \(110/200=0.55\)
-7	Complement \(A^c\)	Everything that is not A	\(\boxed{P(A^c)=1-P(A)}\)	\(P(\text{even})=1/2\), so \(P(\text{odd})=1-1/2=1/2\)
-8	Intersection \(A\cap B\)	A AND B — common outcomes	\(A\cap B\)	\(A=\{1,2,3\}, B=\{3,4,5\}\) → \(A\cap B=\{3\}\)
-9	Union \(A\cup B\)	A OR B — combine outcomes	\(A\cup B\)	\(A=\{1,2\}, B=\{2,3\}\) → \(A\cup B=\{1,2,3\}\)
-10	Mutually Exclusive	A and B cannot happen together	\(\boxed{A\cap B=\varnothing}\)	Even vs odd → no common outcome
-11	Mutually Exclusive OR	OR when there is no overlap	\(\boxed{P(A\cup B)=P(A)+P(B)}\)	\(P(A)=2/6,\ P(B)=2/6\) → \(4/6=2/3\)
-12	OR with Overlap	A and B can happen together	\(\boxed{P(A\cup B)=P(A)+P(B)-P(A\cap B)}\)	\(3/6+3/6-2/6=4/6=2/3\)
-13	Independent Events	A does not affect B	\(\boxed{P(A\cap B)=P(A)P(B)}\)	2 coin tosses: \(1/2\times1/2=1/4\)
-14	Dependent Events	A affects B	\(\boxed{P(A\cap B)=P(A)P(B\mid A)}\)	3 red, 2 blue; red twice without replacement: \(\frac35\times\frac24=\frac3{10}\)
-15	Conditional Probability	Probability of B given that A happened	\(\boxed{P(B\mid A)=\frac{P(A\cap B)}{P(A)}}\)	If \(P(A\cap B)=0.2,\ P(A)=0.5\): (P(B
-16	Axiomatic Rule 1	Probability cannot be negative	\(\boxed{P(A)\ge0}\)	\(P(A)=-0.2\) ❌ impossible
-17	Axiomatic Rule 2	Entire sample space is certain	\(\boxed{P(S)=1}\)	Die must produce one of \(1\)–\(6\), so \(P(S)=1\)
-18	Axiomatic Rule 3	Add probabilities of mutually exclusive events	\(\boxed{P(A\cup B)=P(A)+P(B)}\)	\(0.3+0.4=0.7\)
-🧠 The most important calculation guide
-If the question says...	Think...	Formula
-A AND B, independent	Both happen, and neither affects the other	\(\boxed{P(A)P(B)}\)
-A AND B, dependent	Both happen, but first affects second	\(\boxed{P(A)P(B\mid A)}\)
-A OR B, no common outcome	They are mutually exclusive	\(\boxed{P(A)+P(B)}\)
-A OR B, common outcome exists	There is overlap	\(\boxed{P(A)+P(B)-P(A\cap B)}\)
-NOT A	Complement	\(\boxed{1-P(A)}\)
-⭐ One very important distinction
+# Probability — Complete Notes
 
-Mutually exclusive asks:
+| # | Concept | Meaning | Formula | Example / Calculation |
+|---|---|---|---|---|
+| 1 | Random Experiment | An experiment whose exact result is uncertain | — | Roll a die → possible results: 1, 2, 3, 4, 5, 6 |
+| 2 | Sample Space (S) | All possible outcomes | S = {all possible outcomes} | Two coin tosses → S = {HH, HT, TH, TT} |
+| 3 | Event (A) | One or more outcomes we are interested in | A is a subset of S | Even on a die → A = {2, 4, 6} |
+| 4 | Probability | How likely an event is | 0 ≤ P(A) ≤ 1 | Even on a die → P(A) = 3/6 = 1/2 |
+| 5 | Equally Likely Probability | Favorable outcomes divided by total outcomes | P(A) = favorable outcomes / total outcomes | Getting 5 → P(5) = 1/6 |
+| 6 | Empirical Probability | Probability based on actual observations | P(A) = occurrences / trials | 110 Heads in 200 tosses → 110/200 = 0.55 |
+| 7 | Complement (Aᶜ) | Everything that is not A | P(Aᶜ) = 1 − P(A) | P(even) = 1/2 → P(odd) = 1 − 1/2 = 1/2 |
+| 8 | Intersection (A ∩ B) | A AND B — common outcomes | A ∩ B | A = {1, 2, 3}, B = {3, 4, 5} → A ∩ B = {3} |
+| 9 | Union (A ∪ B) | A OR B — all outcomes from A and B | A ∪ B | A = {1, 2}, B = {2, 3} → A ∪ B = {1, 2, 3} |
+| 10 | Mutually Exclusive | A and B cannot happen together | A ∩ B = ∅ | Even vs odd → no common outcome |
+| 11 | Mutually Exclusive OR | OR when there is no overlap | P(A ∪ B) = P(A) + P(B) | P(A) = 2/6, P(B) = 2/6 → 4/6 = 2/3 |
+| 12 | OR with Overlap | A and B can happen together | P(A ∪ B) = P(A) + P(B) − P(A ∩ B) | 3/6 + 3/6 − 2/6 = 4/6 = 2/3 |
+| 13 | Independent Events | A does not affect B | P(A ∩ B) = P(A) × P(B) | Two coin tosses → 1/2 × 1/2 = 1/4 |
+| 14 | Dependent Events | A affects B | P(A ∩ B) = P(A) × P(B given A) | 3 red, 2 blue; red twice without replacement → 3/5 × 2/4 = 3/10 |
+| 15 | Conditional Probability | Probability of B given that A happened | P(B given A) = P(A ∩ B) / P(A) | If P(A ∩ B) = 0.2 and P(A) = 0.5 → 0.2/0.5 = 0.4 |
+| 16 | Axiomatic Rule 1 | Probability cannot be negative | P(A) ≥ 0 | P(A) = −0.2 → impossible |
+| 17 | Axiomatic Rule 2 | Entire sample space is certain | P(S) = 1 | A die must produce 1–6 → P(S) = 1 |
+| 18 | Axiomatic Rule 3 | Add probabilities of mutually exclusive events | P(A ∪ B) = P(A) + P(B) | 0.3 + 0.4 = 0.7 |
 
-“Can A and B happen together?”
+## Most Important Calculation Guide
 
-Independent asks:
+| Question says | Think | Formula |
+|---|---|---|
+| A AND B, independent | Both happen and neither affects the other | P(A ∩ B) = P(A) × P(B) |
+| A AND B, dependent | Both happen and the first affects the second | P(A ∩ B) = P(A) × P(B given A) |
+| A OR B, no common outcome | Mutually exclusive | P(A ∪ B) = P(A) + P(B) |
+| A OR B, common outcome exists | There is overlap | P(A ∪ B) = P(A) + P(B) − P(A ∩ B) |
+| NOT A | Complement | P(Aᶜ) = 1 − P(A) |
 
-“Does A affect B?”
+## Key Distinction
 
-So:
+### Mutually Exclusive
 
-$$ \boxed{\text{Mutually exclusive → NO together}} $$ $$ \boxed{\text{Independent → NO effect}} $$
+Ask:
 
-And remember:
+> Can A and B happen together?
 
-$$ \boxed{\text{AND → usually multiplication}} $$ $$ \boxed{\text{OR → usually addition}} $$
+If **NO** → mutually exclusive.
 
-This is the core framework you can use to decide which probability formula to use.
+A ∩ B = ∅
+
+### Independent
+
+Ask:
+
+> Does A affect B?
+
+If **NO** → independent.
+
+P(A ∩ B) = P(A) × P(B)
+
+## Easy Memory Rules
+
+- **AND → usually multiply**
+- **OR → usually add**
+- **OR with overlap → add − overlap**
+- **NOT → 1 − probability**
+- **Independent → one does not affect the other**
+- **Dependent → one affects the other**
+- **Mutually exclusive → cannot happen together**
