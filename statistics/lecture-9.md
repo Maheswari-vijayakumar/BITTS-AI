@@ -1,4 +1,4 @@
-Here is the complete summary updated to include both worked-out numerical examples from your slides (the Tyre example and the Fast Food Sodium example).
+Here is the updated master summary incorporating this new light bulb example along with the previous topics.
 
 ---
 
@@ -7,7 +7,7 @@ Here is the complete summary updated to include both worked-out numerical exampl
 * **Definition:** Hypothesis testing uses sample statistics to make an inferential decision about an entire population parameter.
 
 
-* **Population vs. Sample:** We cannot test every item in a population (e.g., all manufactured tyres). Instead, we draw a representative sample of size $n$, measure its properties, and determine if the sample data contradicts a claim about the population.
+* **Population vs. Sample:** We cannot test every item in a population (e.g., all manufactured tyres or light bulbs). Instead, we draw a representative sample of size $n$, measure its properties, and determine if the sample data contradicts a claim about the population.
 
 
 
@@ -68,12 +68,21 @@ Because decisions are based on samples, two types of errors can occur:
 
 
 
-### Decision Rule Based on $p$-Value:
+### Decision Rules:
 
-1. **$p \le \alpha$:** Reject $H_0$ (statistically significant; support $H_a$).
+1. **Using $p$-Value:** If $p \le \alpha$, reject $H_0$. If $p > \alpha$, fail to reject $H_0$.
 
 
-2. **$p > \alpha$:** Fail to reject $H_0$ (not statistically significant).
+2. **Using Critical Values ($Z_\alpha$):**
+* **Right-Tailed:** Reject $H_0$ if $z_{\text{calculated}} \ge Z_\alpha$.
+
+
+* **Left-Tailed:** Reject $H_0$ if $z_{\text{calculated}} \le Z_\alpha$ (i.e., further to the left in the rejection region).
+
+
+* **Two-Tailed:** Reject $H_0$ if $\vert{}z_{\text{calculated}}\vert{} \ge \vert{}Z_\alpha\vert{}$.
+
+
 
 
 
@@ -83,37 +92,32 @@ Because decisions are based on samples, two types of errors can occur:
 
 | Test Type | $1\%$ ($\alpha = 0.01$) | $5\%$ ($\alpha = 0.05$) | $10\%$ ($\alpha = 0.10$) |
 | --- | --- | --- | --- |
-| **Two-Tailed ($\neq$)** | $\Vert{}Z_\alpha\Vert{} = 2.58$<br> | $\Vert{}Z_\alpha\Vert{} = 1.96$<br> | $\Vert{}Z_\alpha\Vert{} = 1.645$<br> |
+| **Two-Tailed ($\neq$)** | $\vert{}Z_\alpha\vert{} = 2.58$<br> | $\vert{}Z_\alpha\vert{} = 1.96$<br> | $\vert{}Z_\alpha\vert{} = 1.645$<br> |
 | **Right-Tailed ($>$)** | $Z_\alpha = 2.33$<br> | $Z_\alpha = 1.65$<br> | $Z_\alpha = 1.28$<br> |
 | **Left-Tailed ($<$)** | $Z_\alpha = -2.33$<br> | $Z_\alpha = -1.65$<br> | $Z_\alpha = -1.28$<br> |
 
-* **Decision Rule:** For a right-tailed test, reject $H_0$ if $z_{\text{calculated}} \ge Z_\alpha$. For a left-tailed test, reject $H_0$ if $z_{\text{calculated}} \le Z_\alpha$. For a two-tailed test, reject $H_0$ if $\Vert{}z_{\text{calculated}}\Vert{} \ge \Vert{}Z_\alpha\Vert{}$.
-
-
-
 ---
 
-## 7. Step-by-Step Testing Procedure & Worked Examples
+## 7. Step-by-Step Testing Procedure & All Worked Examples
 
 ### Worked Example 1: Tyre Life Span (Two-Tailed Concept)
 
-* **Problem:** Company claims tyre mean life is $50,000\text{ km}$. You test $n = 30$ tyres, finding $\bar{x} = 47,000\text{ km}$ and $s = 5,500\text{ km}$.
+* **Problem:** Company claims tyre mean life is $50,000\text{ km}$. Sample of $n = 30$ gives $\bar{x} = 47,000\text{ km}$ and $s = 5,500\text{ km}$.
 
 
 
 1. **Hypotheses:** $H_0: \mu = 50,000$, $H_a: \mu \neq 50,000$
 
-2. **Standard Error:** $\sigma_{\bar{x}} = \frac{5500}{\sqrt{30}} \approx 1004.2\text{ km}$
-3. **Test Statistic ($z$):** $z = \frac{47000 - 50000}{1004.2} = -2.99$
-4. **Conclusion:** $p\text{-value} = 0.0013$ ($0.13\%$). Since $0.0013 \le 0.05$, **Reject $H_0$**. The advertisement claim is likely false.
+2. **Test Statistic ($z$):** $z = \frac{47000 - 50000}{\frac{5500}{\sqrt{30}}} \approx -2.99$
+3. **Conclusion:** $p\text{-value} = 0.0013$ ($0.13\%$). Since $0.0013 \le 0.05$, **Reject $H_0$**. The advertisement claim is likely false.
 
 
 
 ---
 
-### Worked Example 2: Fast Food Sodium Content (Right-Tailed)
+### Worked Example 2: Fast Food Sodium Content (Right-Tailed Test)
 
-* **Problem:** Restaurant claims mean sodium is no more than $920\text{ mg}$. A sample of $n = 44$ has $\bar{x} = 925\text{ mg}$ and $s = 18\text{ mg}$ at $\alpha = 0.05$.
+* **Problem:** Restaurant claims mean sodium is no more than $920\text{ mg}$. Sample of $n = 44$ gives $\bar{x} = 925\text{ mg}$ and $s = 18\text{ mg}$ at $\alpha = 0.05$.
 
 
 
@@ -121,7 +125,7 @@ Because decisions are based on samples, two types of errors can occur:
 
 2. **Test Statistic ($z$):**
 
-$$z = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{925 - 920}{\frac{18}{\sqrt{44}}} = \frac{5}{2.7136} = 1.842$$
+$$z = \frac{925 - 920}{\frac{18}{\sqrt{44}}} = \frac{5}{2.7136} = 1.842$$
 
 
 
@@ -131,4 +135,35 @@ $$z = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{925 - 920}{\frac{18}{\sqr
 4. **Decision:** $1.842 > 1.65 \rightarrow$ **Reject $H_0$**.
 
 
-5. **Conclusion:** There is sufficient evidence at $\alpha = 0.05$ to reject the restaurant's claim that sodium is no more than $920\text{ mg}$. The sodium content is significantly higher.
+5. **Conclusion:** Sufficient evidence to reject the restaurant's claim; mean sodium content is significantly greater than $920\text{ mg}$.
+
+
+
+---
+
+### Worked Example 3: Light Bulb Life Span (Left-Tailed Test)
+
+* **Problem:** Manufacturer guarantees mean life is **more than** $750\text{ hours}$ ($\mu > 750$). Sample of $n = 36$ gives $\bar{x} = 745\text{ hours}$ and $s = 60\text{ hours}$ at $\alpha = 0.01$ ($1\%$).
+
+
+
+1. **Hypotheses:**
+* $H_0: \mu \ge 750$ **(Claim: Manufacturer guarantees $> 750$)**
+
+* $H_a: \mu < 750$
+
+
+
+2. **Test Statistic ($z$):**
+
+$$z = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{745 - 750}{\frac{60}{\sqrt{36}}} = \frac{-5}{10} = -0.5$$
+
+
+
+3. **Critical Value:** Left-tailed test at $\alpha = 0.01 \rightarrow Z_\alpha = -2.33$.
+
+
+4. **Decision:** $z = -0.5$ is greater than $-2.33$ (it falls in the **acceptance region** to the right of $-2.33$). Therefore, **Do Not Reject $H_0$**.
+
+
+5. **Conclusion:** There is not enough statistical evidence at $\alpha = 0.01$ to reject the manufacturer's claim. We cannot conclude that the mean life is less than $750\text{ hours}$.
