@@ -1,4 +1,4 @@
-Here is a complete, structured summary of all the Hypothesis Testing concepts covered across your lecture slides and our discussion.
+Here is the complete summary updated to include both worked-out numerical examples from your slides (the Tyre example and the Fast Food Sodium example).
 
 ---
 
@@ -79,30 +79,7 @@ Because decisions are based on samples, two types of errors can occur:
 
 ---
 
-## 6. Step-by-Step Testing Procedure (Single Mean)
-
-1. **Formulate Hypotheses:** Set up $H_0$ and $H_a$.
-
-
-2. **Select Significance Level ($\alpha$):** Choose $0.01$, $0.05$, or $0.10$.
-
-
-3. **Compute Test Statistic ($z$):**
-
-$$z = \frac{\bar{x} - \mu}{\sigma_{\bar{x}}} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}$$
-
-
-
-4. **Determine Critical Value ($Z_\alpha$) or $p$-Value:** Compare computed $z$ against standard normal $Z$-table values.
-
-
-5. **Formulate Conclusion:** Reject or fail to reject $H_0$ and state the real-world interpretation.
-
-
-
----
-
-## 7. Critical Value Reference Matrix ($Z_\alpha$)
+## 6. Critical Value Reference Matrix ($Z_\alpha$)
 
 | Test Type | $1\%$ ($\alpha = 0.01$) | $5\%$ ($\alpha = 0.05$) | $10\%$ ($\alpha = 0.10$) |
 | --- | --- | --- | --- |
@@ -111,3 +88,47 @@ $$z = \frac{\bar{x} - \mu}{\sigma_{\bar{x}}} = \frac{\bar{x} - \mu}{\frac{s}{\sq
 | **Left-Tailed ($<$)** | $Z_\alpha = -2.33$<br> | $Z_\alpha = -1.65$<br> | $Z_\alpha = -1.28$<br> |
 
 * **Decision Rule:** For a right-tailed test, reject $H_0$ if $z_{\text{calculated}} \ge Z_\alpha$. For a left-tailed test, reject $H_0$ if $z_{\text{calculated}} \le Z_\alpha$. For a two-tailed test, reject $H_0$ if $\Vert{}z_{\text{calculated}}\Vert{} \ge \Vert{}Z_\alpha\Vert{}$.
+
+
+
+---
+
+## 7. Step-by-Step Testing Procedure & Worked Examples
+
+### Worked Example 1: Tyre Life Span (Two-Tailed Concept)
+
+* **Problem:** Company claims tyre mean life is $50,000\text{ km}$. You test $n = 30$ tyres, finding $\bar{x} = 47,000\text{ km}$ and $s = 5,500\text{ km}$.
+
+
+
+1. **Hypotheses:** $H_0: \mu = 50,000$, $H_a: \mu \neq 50,000$
+
+2. **Standard Error:** $\sigma_{\bar{x}} = \frac{5500}{\sqrt{30}} \approx 1004.2\text{ km}$
+3. **Test Statistic ($z$):** $z = \frac{47000 - 50000}{1004.2} = -2.99$
+4. **Conclusion:** $p\text{-value} = 0.0013$ ($0.13\%$). Since $0.0013 \le 0.05$, **Reject $H_0$**. The advertisement claim is likely false.
+
+
+
+---
+
+### Worked Example 2: Fast Food Sodium Content (Right-Tailed)
+
+* **Problem:** Restaurant claims mean sodium is no more than $920\text{ mg}$. A sample of $n = 44$ has $\bar{x} = 925\text{ mg}$ and $s = 18\text{ mg}$ at $\alpha = 0.05$.
+
+
+
+1. **Hypotheses:** $H_0: \mu \le 920$ **(Claim)**, $H_a: \mu > 920$
+
+2. **Test Statistic ($z$):**
+
+$$z = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{925 - 920}{\frac{18}{\sqrt{44}}} = \frac{5}{2.7136} = 1.842$$
+
+
+
+3. **Critical Value:** Right-tailed test at $\alpha = 0.05 \rightarrow Z_\alpha = 1.65$.
+
+
+4. **Decision:** $1.842 > 1.65 \rightarrow$ **Reject $H_0$**.
+
+
+5. **Conclusion:** There is sufficient evidence at $\alpha = 0.05$ to reject the restaurant's claim that sodium is no more than $920\text{ mg}$. The sodium content is significantly higher.
